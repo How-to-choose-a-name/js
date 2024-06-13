@@ -3,310 +3,134 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>尚硅谷</title>
-    <link rel="stylesheet" href="./css/normalize.css" />
-    <link rel="stylesheet" href="/css/template.css" />
+    <title>Document</title>
+    <style>
+      table {
+        width: 600px;
+        margin: 150px auto;
+        border-collapse: collapse;
+        text-align: center;
+      }
+      table,
+      td {
+        border: 1px solid black;
+        height: 40px;
+      }
+      a {
+        text-decoration: none;
+        color: red;
+      }
+      div {
+        width: 600px;
+        text-align: center;
+        margin: -80px auto;
+      }
+    </style>
   </head>
   <body>
-    <div class="topbar">
-      <!-- 版心 -->
-      <div class="container clearFloat">
-        <!-- 左侧登录区 -->
-        <div class="topbar-welcome floatLeft">
-          <span>尚品汇欢迎您</span>
-          <span>请</span>
-          <a href="#">登录</a>
-          <a href="#">免费注册</a>
-        </div>
-        <!-- 右侧导航区 -->
-        <div class="topbar-nav floatRight">
-          <ul class="ulList clearFloat">
-            <li><a href="#">我的订单</a></li>
-            <li><a href="#">我的订单</a></li>
-            <li><a href="#">我的订单</a></li>
-            <li><a href="#">我的订单</a></li>
-            <li><a href="#">我的订单</a></li>
-            <li><a href="#">我的订单</a></li>
-            <li><a href="#">我的订单</a></li>
-            <li><a href="#">我的订单</a></li>
-          </ul>
-        </div>
-      </div>
+    <!-- <form action="">
+      <label for="checkbox"> 全选 </label>
+      <input type="checkbox" name="" id="checkbox" />
+      <br />
+      <label for=""> 孙悟空 </label>
+      <input type="checkbox" name="hobby" id="" />
+      <label for=""> 猪八戒 </label>
+      <input type="checkbox" name="hobby" id="" />
+      <label for=""> 沙和尚 </label>
+      <input type="checkbox" name="hobby" id="" />
+      <br />
+      <button type="button" id="all">全选</button>
+      <button type="button" id="reverse">反选</button>
+      <button type="button" id="no">全不选</button>
+    </form> -->
+    <table>
+      <thead>
+        <tr>
+          <td>名字</td>
+          <td>账号</td>
+          <td>操作</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>孙悟空</td>
+          <td>1468888</td>
+          <td><a href="#">删除</a></td>
+        </tr>
+        <tr>
+          <td>名字</td>
+          <td>845977</td>
+          <td><a href="#">删除</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      名字:<input type="text" name="names" id="" /><br />
+      账号:<input type="text" name="pass" id="" /><br />
+      <button type="button">添加</button>
     </div>
-    <!-- 头部 -->
-    <div class="header">
-      <!-- 版心 -->
-      <div class="container clearFloat">
-        <!-- 左侧logo区 -->
-        <div class="headerLogo floatLeft">
-          <img src="./assets/logo.png" alt="描述" />
-        </div>
-        <!-- 右侧搜索区 -->
-        <div class="headerSearch floatRight">
-          <form action="#">
-            <input type="text" />
-            <button></button>
-          </form>
-        </div>
-      </div>
-    </div>
-    <!-- 主要内容 -->
-    <div class="main">
-      <div class="container clearFloat">
-        <div class="mainLeft floatLeft">
-          <ul>
-            <li>
-              <a href="#">手机/运营商/数码</a>
-              <div class="second-menu">
-                <dl class="clearFloat">
-                  <dt><a href="#">电子书刊</a></dt>
-                  <dd><a href="#">电子书</a></dd>
-                  <dd><a href="#">网络原创</a></dd>
-                  <dd><a href="#">数码杂志</a></dd>
-                  <dd><a href="#">多媒体图书</a></dd>
-                </dl>
-              </div>
-            </li>
-            <li>
-              <a href="#">手机/运营商/数码</a>
-            </li>
-            <li>
-              <a href="#">手机/运营商/数码</a>
-            </li>
-            <li>
-              <a href="#">手机/运营商/数码</a>
-            </li>
-            <li>
-              <a href="#">手机/运营商/数码</a>
-            </li>
-            <li>
-              <a href="#">手机/运营商/数码</a>
-            </li>
-            <li>
-              <a href="#">手机/运营商/数码</a>
-            </li>
-            <li>
-              <a href="#">手机/运营商/数码</a>
-            </li>
-            <li>
-              <a href="#">手机/运营商/数码</a>
-            </li>
-            <li>
-              <a href="#">手机/运营商/数码</a>
-            </li>
-            <li>
-              <a href="#">手机/运营商/数码</a>
-            </li>
-            <li>
-              <a href="#">手机/运营商/数码</a>
-            </li>
-            <li>
-              <a href="#">手机/运营商/数码</a>
-            </li>
-            <li>
-              <a href="#">手机/运营商/数码</a>
-            </li>
-            <li>
-              <a href="#">手机/运营商/数码</a>
-            </li>
-          </ul>
-        </div>
-        <div class="banner floatLeft">
-          <img src="./assets/banner主图.png" alt="" />
-        </div>
-        <div class="mainRight floatLeft">
-          <div class="introduce">
-            <div class="express clearFloat">
-              <span class="floatLeft">商品快报</span>
-              <span class="floatRight">更多></span>
-            </div>
-            <div class="express-message">
-              <ul>
-                <li>[特惠] 毛衣+直筒裤，才是YYDS。</li>
-                <li>[特惠] 毛衣+直筒裤，才是YYDS。</li>
-                <li>[特惠] 毛衣+直筒裤，才是YYDS。</li>
-                <li>[特惠] 毛衣+直筒裤，才是YYDS。</li>
-              </ul>
-            </div>
-          </div>
-          <div class="introduce2">
-            <ul class="clearFloat">
-              <li>
-                <div></div>
-                <span>话费</span>
-              </li>
-              <li>
-                <div></div>
-                <span>话费</span>
-              </li>
-              <li>
-                <div></div>
-                <span>话费</span>
-              </li>
-              <li>
-                <div></div>
-                <span>话费</span>
-              </li>
-            </ul>
-            <ul class="clearFloat">
-              <li>
-                <div></div>
-                <span>话费</span>
-              </li>
-              <li>
-                <div></div>
-                <span>话费</span>
-              </li>
-              <li>
-                <div></div>
-                <span>话费</span>
-              </li>
-              <li>
-                <div></div>
-                <span>话费</span>
-              </li>
-            </ul>
-            <ul class="clearFloat">
-              <li>
-                <div></div>
-                <span>话费</span>
-              </li>
-              <li>
-                <div></div>
-                <span>话费</span>
-              </li>
-              <li>
-                <div></div>
-                <span>话费</span>
-              </li>
-              <li>
-                <div></div>
-                <span>话费</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="img">
-      <div class="container">
-        <img src="/assets/seckill.png" alt="" />
-        <img src="/assets/banner1.png" alt="" />
-        <img src="/assets/banner1.png" alt="" />
-        <img src="/assets/banner1.png" alt="" />
-        <img src="/assets/banner1.png" alt="" />
-      </div>
-    </div>
-    <div class="shooping-message">
-      <div class="container clearFloat">
-        <span class="floatLeft">家用电器</span>
-        <ul class="shooping-ul floatRight">
-          <li><a href="#">热门</a></li>
-          <li><a href="#">热门</a></li>
-          <li><a href="#">热门</a></li>
-          <li><a href="#">热门</a></li>
-          <li><a href="#">热门</a></li>
-          <li><a href="#">热门</a></li>
-          <li><a href="#">热门</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="shooping">
-      <div class="container clearFloat">
-        <div class="floatLeft shooping-msg">
-          <div class="clearFloat">
-            <ul class="floatLeft">
-              <li>节能补贴</li>
-              <li>节能补贴</li>
-              <li>节能补贴</li>
-            </ul>
-            <ul class="floatRight">
-              <li>节能补贴</li>
-              <li>节能补贴</li>
-              <li>节能补贴</li>
-            </ul>
-          </div>
-          <img src="/assets/编组.png" alt="" />
-        </div>
-        <div class="floatLeft">
-          <img src="/assets/appliance_banner07.png" alt="" />
-        </div>
-        <div class="floatLeft">
-          <div class="clearFloat double-shopping">
-            <div>
-              <img src="/assets/微波炉.png" alt="" />
-            </div>
-            <div>
-              <img src="/assets/微波炉.png" alt="" />
-            </div>
-          </div>
-        </div>
-        <div class="floatLeft">
-          <img src="/assets/冰箱.png" alt="" />
-        </div>
-        <div class="floatLeft">
-          <div class="clearFloat">
-            <div>
-              <img src="/assets/微波炉.png" alt="" />
-            </div>
-            <div>
-              <img src="/assets/微波炉.png" alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer">
-      <div class="container clearFloat">
-        <ul class="floatLeft">
-          <li>购物流程</li>
-          <li>购物流程</li>
-          <li>购物流程</li>
-          <li>购物流程</li>
-          <li>购物流程</li>
-          <li>购物流程</li>
-        </ul>
-        <ul class="floatLeft">
-          <li>购物流程</li>
-          <li>购物流程</li>
-          <li>购物流程</li>
-          <li>购物流程</li>
-          <li>购物流程</li>
-          <li>购物流程</li>
-        </ul>
-        <ul class="floatLeft">
-          <li>购物流程</li>
-          <li>购物流程</li>
-          <li>购物流程</li>
-          <li>购物流程</li>
-          <li>购物流程</li>
-          <li>购物流程</li>
-        </ul>
-        <ul class="floatLeft">
-          <li>购物流程</li>
-          <li>购物流程</li>
-          <li>购物流程</li>
-          <li>购物流程</li>
-          <li>购物流程</li>
-          <li>购物流程</li>
-        </ul>
-        <ul class="floatLeft">
-          <li>购物流程</li>
-          <li>购物流程</li>
-          <li>购物流程</li>
-          <li>购物流程</li>
-          <li>购物流程</li>
-          <li>购物流程</li>
-        </ul>
-        <ul class="floatLeft">
-          <li>购物流程</li>
-          <li>购物流程</li>
-          <li>购物流程</li>
-          <li>购物流程</li>
-          <li>购物流程</li>
-          <li>购物流程</li>
-        </ul>
-      </div>
-    </div>
+    <script>
+      // const checkbox = document.getElementById("checkbox");
+      // const all = document.querySelector("#all");
+      // const reverse = document.querySelector("#reverse");
+      // const no = document.querySelector("#no");
+      // const hobby = document.getElementsByName("hobby");
+      // all.onclick = () => {
+      //   for (let item of hobby) {
+      //     item.checked = true;
+      //   }
+      //   checkbox.checked = true;
+      // };
+      // reverse.onclick = () => {
+      //   for (let item of hobby) {
+      //     item.checked = !item.checked;
+      //   }
+      //   if ([...hobby].every((item) => item.checked)) {
+      //     checkbox.checked = true;
+      //   } else {
+      //     checkbox.checked = false;
+      //   }
+      // };
+      // no.onclick = () => {
+      //   for (let item of hobby) {
+      //     item.checked = false;
+      //   }
+      //   checkbox.checked = false;
+      // };
+      // checkbox.onclick = () => {
+      //   for (let item of hobby) {
+      //     item.checked = checkbox.checked;
+      //   }
+      // };
+      function deleteHandl(event) {
+        event.preventDefault();
+        this.parentNode.parentNode.remove();
+      }
+      const a = document.querySelectorAll("tr td a");
+      const name = document.querySelector("input[name='names']");
+      const pass = document.querySelector("input[name='pass']");
+      const button = document.querySelector("button");
+      const tbody = document.querySelector("tbody");
+      for (let item of a) {
+        item.onclick = deleteHandl;
+      }
+      button.onclick = () => {
+        const tr = document.createElement("tr");
+        const td1 = document.createElement("td");
+        const td2 = document.createElement("td");
+        td1.textContent = name.value;
+        td2.textContent = pass.value;
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.insertAdjacentHTML(
+          "beforeend",
+          `<td><a href="javascipt:;">删除</a></td>`
+        );
+        tbody.insertAdjacentElement("beforeend", tr);
+        const a = document.querySelectorAll("tr td a");
+        console.log(a);
+        a[a.length - 1].onclick = deleteHandl;
+      };
+    </script>
   </body>
 </html>
