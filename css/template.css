@@ -1,0 +1,281 @@
+/* 公用样式 */
+.floatLeft {
+  float: left;
+}
+.floatRight {
+  float: right;
+}
+.clearFloat::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+/* 顶部导航 */
+.topbar {
+  height: 30px;
+  background-color: #ececec;
+  font-size: 12px;
+}
+.container {
+  width: 1190px;
+  margin: 0 auto;
+}
+/* 左侧登录区 */
+.topbar-welcome {
+  font-size: 0;
+  height: 30px;
+  line-height: 30px;
+}
+.topbar-welcome a,
+.topbar-welcome span {
+  font-size: 12px;
+}
+.topbar-welcome span:first-child {
+  color: #6666;
+  margin-right: 28px;
+}
+.topbar-welcome a:nth-of-type(1) {
+  padding-right: 10px;
+  border-right: 1px solid #666666;
+}
+.topbar-welcome a:last-of-type {
+  padding-left: 10px;
+}
+
+/* <!-- 右侧导航区 --> */
+.topbar-nav .ulList li {
+  float: left;
+  line-height: 30px;
+}
+.topbar-nav .ulList li a {
+  padding: 0 15px;
+  border-right: 1px solid #666666;
+}
+/* 头部 */
+.header {
+  height: 120px;
+}
+.headerLogo {
+  height: 120px;
+}
+.headerSearch {
+  font-size: 0;
+}
+.headerSearch form {
+  margin-top: 42px;
+}
+.headerSearch input {
+  width: 510px;
+  height: 34px;
+  border: 1px #dd302d solid;
+}
+.headerSearch button {
+  width: 80px;
+  height: 36px;
+  background-color: #dd302d;
+  background-image: url("../assets/serch_icon.png");
+  background-repeat: no-repeat;
+  background-position: 26px 4px;
+  vertical-align: middle;
+}
+/* 主要内容 */
+.main {
+  height: 458px;
+}
+.main .mainLeft {
+  width: 190px;
+  height: 458px;
+  background-color: #f4f4f4;
+  position: relative;
+}
+.main .mainLeft ul {
+  padding: 9px 0;
+}
+.main .mainLeft ul li {
+  font-size: 14px;
+  padding-left: 16px;
+  margin-bottom: 6px;
+  height: 24px;
+  line-height: 24px;
+}
+.main .mainLeft ul li:hover {
+  background-color: white;
+}
+.main .mainLeft ul li:hover > a {
+  color: aqua;
+}
+.mainLeft .second-menu {
+  width: 690px;
+  height: 458px;
+  background-color: #e3e3e3;
+  position: absolute;
+  top: 0;
+  left: 200px;
+  font-size: 14px;
+  display: none;
+}
+.mainLeft .second-menu dl {
+  padding: 10px 0;
+}
+.mainLeft .second-menu dt {
+  float: left;
+  margin-left: 20px;
+  font-weight: 700;
+  margin-right: 10px;
+  width: 70px;
+}
+.mainLeft .second-menu dd {
+  float: left;
+  color: #666;
+}
+.mainLeft .second-menu dd a {
+  padding: 0 10px;
+  border-left: 1px solid black;
+}
+.main .mainLeft ul li:hover .second-menu {
+  display: block;
+}
+
+.main .banner {
+  width: 690px;
+  margin: 0 10px;
+  background-color: #ececec;
+  height: 458px;
+}
+.main .mainRight {
+  width: 290px;
+  height: 458px;
+}
+.mainRight .introduce {
+  width: 268px;
+  height: 158px;
+  border: 1px solid gray;
+  padding: 10px;
+  font-size: 12px;
+}
+.express span:first-child {
+  font-size: 14px;
+}
+.express span:last-child {
+  color: #999;
+  margin-top: 5px;
+}
+.express {
+  height: 30px;
+  border-bottom: 1px solid #d9d9d9;
+}
+.express-message li {
+  height: 30px;
+  line-height: 30px;
+}
+.introduce2 {
+  padding: 16px;
+  margin-top: 10px;
+  text-align: center;
+}
+.introduce2 ul li div {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 3px;
+  background: url("/assets/精灵图-侧边功能.png") no-repeat 0 0;
+}
+.introduce2 ul li {
+  float: left;
+  margin-right: 22px;
+}
+.introduce2 ul li:last-child {
+  margin-right: 0px;
+}
+.img {
+  height: 190px;
+  font-size: 0;
+  margin-top: 10px;
+}
+.img img {
+  margin-left: 10px;
+}
+.img img:first-child {
+  margin-left: 0px;
+}
+.shooping-message {
+  margin: 20px 0;
+  height: 30px;
+}
+.shooping-message span {
+  font-size: 20px;
+  font-weight: 700;
+}
+.shooping-message ul li {
+  float: left;
+  font-size: 14px;
+  height: 30px;
+  line-height: 30px;
+}
+.shooping-message ul li a {
+  padding: 0 10px;
+  border-right: 1px solid #666;
+  font-weight: 500;
+}
+.shooping-message ul li:last-child a {
+  border: 0;
+}
+.shooping {
+  height: 432px;
+}
+.shooping .container {
+  border-top: 3px solid red;
+}
+.shooping-msg {
+  width: 230px;
+  height: 431px;
+  background-color: #f4f4f4;
+}
+.shooping-msg img {
+  margin-top: 40px;
+  margin-left: 18px;
+}
+.shooping-msg div {
+  padding: 20px;
+}
+.shooping-msg div li {
+  width: 80px;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid black;
+}
+.shooping .container > div:nth-child(2) img {
+  width: 340px;
+  height: 431px;
+}
+.shooping .container div:nth-child(3) > div div {
+  width: 206px;
+  height: 215px;
+  border-bottom: 1px solid gray;
+  border-right: 1px solid gray;
+}
+
+.shooping .container > div:nth-child(4) {
+  border-right: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+.shooping .container > div:nth-child(4) {
+  width: 206px;
+  height: 431px;
+}
+.shooping .container div:nth-child(5) > div div {
+  width: 205px;
+  height: 215px;
+  border-bottom: 1px solid gray;
+}
+.footer {
+  margin-top: 20px;
+  padding-top: 20px;
+  width: 100%;
+  background-color: #483e3e;
+}
+.footer ul {
+  width: 190px;
+  height: 176px;
+  margin-right: 8px;
+}

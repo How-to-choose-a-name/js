@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #main {
+        width: 360px;
+        height: 420px;
+        border: 10px solid black;
+        margin: 50px auto;
+        border-radius: 20px;
+        background-color: #b7d4a8;
+      }
+      #container {
+        width: 304px;
+        height: 304px;
+        border: 2px solid black;
+        margin: 20px auto;
+        position: relative;
+      }
+      #snake > div {
+        width: 10px;
+        height: 10px;
+        background-color: black;
+        position: absolute;
+        border: 1px solid #b7d4a8;
+      }
+      #foot {
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: 100px;
+        left: 120px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      #foot > div {
+        width: 5px;
+        height: 5px;
+        background-color: black;
+        transform: rotate(45deg);
+      }
+      #record {
+        width: 304px;
+        margin: 20px auto;
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div id="container">
+        <div id="snake">
+          <div></div>
+        </div>
+        <div id="foot">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div id="record">
+        <div id="score">SCORE：<span>0</span></div>
+        <div id="level">LEVEL：<span>1</span></div>
+      </div>
+    </div>
+    <script>
+      const snake = document.querySelector("#snake");
+      const snakes = snake.getElementsByTagName("div");
+      const foot = document.querySelector("#foot");
+      let active = true;
+      let dir;
+      let dirObj = {
+        ArrowUp: "ArrowDown",
+        ArrowDown: "ArrowUp",
+        ArrowLeft: "ArrowRight",
+        ArrowRight: "ArrowLeft",
+      };
+      const scoreSpan = document
+        .getElementById("score")
+        .getElementsByTagName("span")[0];
+      const levelSpan = document
+        .getElementById("level")
+        .getElementsByTagName("span")[0];
+      let score = 0;
+      let level = 1;
+
+      document.addEventListener("keydown", (event) => {
+        if (active) {
+          if (snakes.length < 2 || dirObj[dir] != event.key) {
+            dir = event.key;
+            active = false;
+          }
+        }
+      });
+      function randomFoot() {
+        foot.style.top = Math.floor(Math.random() * 30) * 10 + "px";
+        foot.style.left = Math.floor(Math.random() * 30) * 10 + "px";
+      }
+
+      setTimeout(function move() {
+        const head = snakes[0];
+        let x = head.offsetLeft;
+        let y = head.offsetTop;
+        switch (dir) {
+          case "ArrowUp":
+            y -= 10;
+            break;
+          case "ArrowDown":
+            y += 10;
+            break;
+          case "ArrowLeft":
+            x -= 10;
+            break;
+          case "ArrowRight":
+            x += 10;
+            break;
+          default:
+            break;
+        }
+        if (x < 0 || x > 290 || y < 0 || y > 290) {
+          return alert("over");
+        }
+        if (dir) {
+          for (let i = 0; i < snakes.length - 1; i++) {
+            if (x == snakes[i].offsetLeft && y == snakes[i].offsetTop) {
+              return alert("GG");
+            }
+          }
+        }
+        if (
+          head.offsetTop == foot.offsetTop &&
+          head.offsetLeft == foot.offsetLeft
+        ) {
+          randomFoot();
+          snake.insertAdjacentHTML("beforeend", "<div></div>");
+          score++;
+          scoreSpan.textContent = score;
+          if (score % 5 == 0 && level < 15) {
+            level++;
+            levelSpan.textContent = level;
+          }
+        }
+        const tail = snakes[snakes.length - 1];
+        tail.style.top = y + "px";
+        tail.style.left = x + "px";
+        snake.insertAdjacentElement("afterbegin", tail);
+        active = true;
+
+        setTimeout(move, 300 - level * 20);
+      }, 300);
+    </script>
+  </body>
+</html>

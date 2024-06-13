@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      .outer {
+        width: 300px;
+        height: 200px;
+        margin: 0 auto;
+        margin-top: 100px;
+        position: relative;
+        background-color: aqua;
+      }
+      .outer img {
+        width: 300px;
+        height: 200px;
+      }
+      .imgList li {
+        position: absolute;
+        opacity: 0;
+      }
+      .imgList .active {
+        opacity: 1;
+        z-index: 1;
+      }
+      a {
+        text-decoration: none;
+      }
+      .switch {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        font-size: 40px;
+        height: 40px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        z-index: 2;
+      }
+      .switch a {
+        opacity: 0.5;
+      }
+      .switch a:hover {
+        opacity: 1;
+      }
+      .radius {
+        width: 100%;
+        position: absolute;
+        bottom: 5px;
+        display: flex;
+        justify-content: center;
+        z-index: 999;
+      }
+      .radius a {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #fff;
+        margin: 5px;
+        opacity: 0.5;
+      }
+
+      .radius a:hover,
+      .radius .aActive {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <ul class="imgList">
+        <li class="active">
+          <a href="#"> <img src="./assets/icon_话费_nor.png" alt="" />1 </a>
+        </li>
+        <li>
+          <a href="#"> <img src="./assets/icon_酒店_nor.png" alt="" />2 </a>
+        </li>
+        <li>
+          <a href="#"> <img src="./assets/icon_机票_nor.png" alt="" />3 </a>
+        </li>
+        <li>
+          <a href="#"> <img src="./assets/icon_白条_nor.png" alt="" />4 </a>
+        </li>
+        <li>
+          <a href="#"> <img src="./assets/icon_游戏_nor.png" alt="" />5 </a>
+        </li>
+      </ul>
+      <div class="switch">
+        <div class="prev">
+          <a href="#"> < </a>
+        </div>
+        <div class="next">
+          <a href="#"> > </a>
+        </div>
+      </div>
+      <div class="radius">
+        <a class="aActive" href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
+      </div>
+    </div>
+    <script>
+      const aList = document.querySelectorAll(".radius a");
+      const list = document.querySelectorAll(".imgList li");
+      const prev = document.querySelector(".prev");
+      const next = document.querySelector(".next");
+      const outer = document.getElementsByClassName("outer")[0];
+      function conttext(dir) {
+        const current = document.querySelector(".imgList .active");
+        const aTive = document.querySelector(".radius .aActive");
+        let next;
+        if (dir == "next") {
+          next = current.nextElementSibling || list[0];
+        } else if (dir == "prev") {
+          next = current.previousElementSibling || [...list].at(-1);
+        } else if (typeof dir == "number") {
+          next = list[dir];
+        }
+        const index = [...list].indexOf(next);
+        current.classList.remove("active");
+        next.classList.add("active");
+        aTive.classList.remove("aActive");
+        aList[index].classList.add("aActive");
+      }
+      const tooggleChange = (function () {
+        let timer = null;
+        return () => {
+          if (timer == null) {
+            timer = setTimeout(function auto() {
+              conttext("next");
+              timer = setTimeout(auto, 3000);
+            }, 3000);
+          } else {
+            clearTimeout(timer);
+            timer = null;
+          }
+        };
+      })();
+      tooggleChange();
+      prev.addEventListener("click", () => {
+        conttext("prev");
+      });
+      next.addEventListener("click", () => {
+        conttext("next");
+      });
+      outer.onmouseover = () => {
+        tooggleChange();
+      };
+      outer.onmouseout = () => {
+        tooggleChange();
+      };
+      document.addEventListener("click", (event) => {
+        const index = [...aList].indexOf(event.target);
+        if (index != -1) {
+          conttext(index);
+        }
+      });
+    </script>
+  </body>
+</html>
